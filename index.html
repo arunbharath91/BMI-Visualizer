@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BMI Visualizer</title>
+<link rel="stylesheet" href="css/bmi.css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+<script src="js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" href="bootstrap/js/bootstrap.js" />
+
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<span class="patient-flex txt-grey shake">
+<h1>Your BMI Result</h1>
+<box-color></box-color>
+&nbsp;25 <sub>(kg/m<sup>2</sup>)</sub>
+</span>
+
+<div class="panel-container">
+<div class="panel_head">
+<div class="col-md-4">
+<label>Weight</label>
+<strong>191<sub>LBS</sub></strong>
+</div>
+<div class="col-md-4">
+<label>Height</label>
+<strong>5<sup>'</sup>4<sup>''</sup></strong>
+</div>
+<div class="col-md-4">
+<label>Body Mass Index</label>
+<strong>32.8</strong>
+</div>
+</div>
+<div class="panel_body">
+<p>Body Mass Index Scale</p>
+
+<div class="button_block">
+<tooltip data-value="17"></tooltip>
+<div class="btn-group">
+  <button type="button" class="btn btn-blue">< 18.5</button>
+  <button type="button" class="btn btn-green">18.5 - 24.99</button>
+  <button type="button" class="btn btn-orange">25 - 29.99</button>
+  <button type="button" class="btn btn-red">> 30</button>
+</div>
+</div>
+<div class="label_block">
+<div><span class="label-blue"></span><span class="label-text">UNDERWEIGHT</span></div>
+<div><span class="label-green"></span><span class="label-text">NORMAL</span></div>
+<div><span class="label-orange"></span><span class="label-text">OVERWEIGHT</span></div>
+<div><span class="label-red"></span><span class="label-text">OBESE</span></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="col-lg-3">
+<div class="patient-flex txt-grey">
+<h1>Your Result at a glance :</h1></div>
+<div class="color-container mt15">
+
+<i class="fa fa-male" aria-hidden="true" style="font-size:6em;"></i>
+<label>Male</label>
+<div class="circle-container ml1">
+25 <small><sub>(kg/m<sup>2</sup>)</sub></small>
+</div>
+
+</div>
+<a href="#" data-toggle="tooltip" data-placement="left" title="UNDERWEIGHT">
+<div class="flex-group mb05 mt15">
+<span class="color-box blue"></span>
+<span class="panel-block">Your glucose level are two high which indicaters diabetes</span>
+</div>
+</a>
+<a href="#" data-toggle="tooltip" data-placement="left" title="NORMAL">
+<div class="flex-group mb05">
+<span class="color-box green"></span>
+<span class="panel-block">Your glucose level are two high which indicaters diabetes</span>
+</div>
+</a>
+<a href="#" data-toggle="tooltip" data-placement="left" title="OVERWEIGHT">
+<div class="flex-group mb05">
+<span class="color-box orange"></span>
+<span class="panel-block">Your glucose level are two high which indicaters diabetes</span>
+</div>
+</a>
+<a href="#" data-toggle="tooltip" data-placement="left" title="OBESE">
+<div class="flex-group mb05">
+<span class="color-box red"></span>
+<span class="panel-block">Your glucose level are two high which indicaters diabetes</span>
+</div>
+</a>
+</div>
+<div class="col-md-3">
+<ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">National</a></li>
+    <li><a data-toggle="pill" href="#menu1">Global</a></li>
+  </ul>
+  
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3><i class="fa fa-flag" aria-hidden="true"></i> Below Average</h3>
+      <p class="fa_13x">You have lower bmi than <strong class="text-success">76%</strong> of females aged 15-29 in your country</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3><i class="fa fa-globe" aria-hidden="true"></i> Above Average</h3>
+      <p class="fa_13x">You have lower bmi than <strong class="text-success">56%</strong> of females aged 15-29 in the world</p>
+    </div>
+  </div>
+  <div class="patient-flex txt-grey">
+<h1>Any Questions :</h1></div>
+  <div class="panel-block mt15">
+  <p>Contact the physician who order the test for further interpretention of the results:</p>
+  <h4>DR PICO DUVAL</h4>
+  <h4>022 44 0008</h4>
+  </div>
+
+  </div>
+</div>
+   </div>
+    <script>
+        $(document).ready(function () {
+            document.createElement('tooltip');
+            document.createElement('box-color');
+            var obese = $(".btn-red").position();
+            var overweight = $(".btn-orange").position();
+            var normal = $(".btn-green").position();
+            var underweight = $(".btn-blue").position();
+            $('tooltip').each(function () {
+                var attrval = $(this).attr('data-value');
+                if (attrval >= 30) { $('tooltip').text('OBESE'); $('tooltip').animate({ "left": obese.left }, 500); $('box-color,.circle-container').css('background-color', '#f84d56'); }
+                else if (attrval >= 25 && attrval <= 29.9) { $('tooltip').text('OVERWEIGHT'); $('tooltip').animate({ "left": overweight.left + 15 }, 3000); $('box-color,.circle-container').css('background-color', '#ffb030'); }
+                else if (attrval >= 18.5 && attrval <= 24.99) { $('tooltip').text('NORMAL'); $('tooltip').animate({ "left": normal.left + 15 }, 2000); $('box-color,.circle-container').css('background-color', '#79be3f'); }
+                else if (attrval < 18.5) { $('tooltip').text('UNDERWEIGHT'); $('tooltip').animate({ "left": underweight.left }, 1500); $('box-color,.circle-container').css('background-color', '#55b9d3'); }
+                else { alert('input is not a number'); }
+            });
+        });
+    </script>
+
+   <script>
+       $(document).ready(function () {
+           $('[data-toggle="tooltip"]').tooltip();
+       });
+</script> 
+</body>
+</html>

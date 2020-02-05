@@ -1,0 +1,29 @@
+{
+  "name": "bmi-visualizer",
+  "version": "1.0.0",
+  "description": "**BMI-Visualizer is added **Supports most of the screen sizes including tablets and mobiles. **licenced under the category of open-source free licence crendentials. **The information like company name or anything provided in this plugin is only an fake one.",
+  "main": "bmi.js",
+  "scripts": {
+    "start": "node dist/bmi.js",
+    "dev": "nodemon src/bmi.ts",
+    "build": "tsc -p src/tsconfig.app.json && copyfiles -u 1 src/**/*.html src/**/*.css src/assets/**/* dist"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.2.0",
+    "nodemon": "^2.0.2",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.6.2",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/arunbharath91/BMI-Visualizer.git"
+  },
+  "author": "arunbharath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arunbharath91/BMI-Visualizer/issues"
+  },
+  "homepage": "https://github.com/arunbharath91/BMI-Visualizer#readme"
+}

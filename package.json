@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/bmi.js",
     "dev": "nodemon src/bmi.ts",
-    "build": "tsc -p src/tsconfig.app.json && copyfiles -u 1 src/**/*.html src/**/*.css src/assets/**/* dist"
+    "build": "tsc -p src/tsconfig.app.json && copyfiles -u 1 src/**/*.html src/**/*.css src/**/assets/**/* dist"
   },
   "devDependencies": {
     "copyfiles": "^2.2.0",

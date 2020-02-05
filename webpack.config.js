@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/scroll.ts',
+  entry: './src/bmi.ts',
   devtool: 'inline-source-map',
   module: {
     rules: [

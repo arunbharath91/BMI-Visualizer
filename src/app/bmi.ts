@@ -1,6 +1,4 @@
 
-
-
 class Bmi extends HTMLElement {
   private obese: HTMLElement;
   private overweight: HTMLElement;

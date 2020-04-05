@@ -2,9 +2,9 @@
   "name": "bmi-visualizer",
   "version": "1.0.0",
   "description": "**BMI-Visualizer is added **Supports most of the screen sizes including tablets and mobiles. **licenced under the category of open-source free licence crendentials. **The information like company name or anything provided in this plugin is only an fake one.",
-  "main": "main.js",
+  "main": "bundle.js",
   "scripts": {
-    "start": "node dist/main.js",
+    "start": "node dist/bundle.js",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "serve": "webpack-dev-server --open"

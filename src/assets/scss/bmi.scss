@@ -1,10 +1,12 @@
-
-
-.lnD {
-  line-height: 0.5em;
+app-bmi {
+  display: block;
 }
 
-.patient-flex {
+.app-container {
+  display: block;
+}
+
+.patient-result {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -16,123 +18,24 @@
   perspective: 1000px;
 }
 
-.patient-flex h1 {
+.patient-result h1 {
   font-size: 1.3em;
-  margin: 0 7px 0px 0px;
+  margin: 0 7px 0 0;
 }
 
-.patient-flex label {
-  margin: 0px 0px 0px 5px;
+.patient-result label {
+  margin: 0 0 0 5px;
 }
 
-box-color {
+app-bmi box-color {
   height: 20px;
   width: 20px;
   border: 1px solid #ccc;
   background-color: #fff;
+  margin-right: 5px;
 }
 
-.color-box {
-  width: 25px;
-  display: block;
-}
-
-
-.flex-group {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-}
-
-.panel-block {
-  background-color: #e6edf3;
-  padding: 5px 7px;
-  display: inline-block;
-  font-size: 0.9em;
-  line-height: 1.5em;
-  color: #5b5b5b;
-}
-
-.blue {
-  background-color: #55b9d3;
-}
-
-.green {
-  background-color: #79be3f;
-}
-
-.orange {
-  background-color: #ffb030;
-}
-
-.red {
-  background-color: #f84d56;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-.bg-grey {
-  background-color: #f8f8fa;
-}
-
-.label-blue {
-  background-color: #4db3bf;
-  color: #fff;
-}
-
-.label-grey {
-  background-color: #f8f8fa;
-  color: #dad8d8;
-}
-
-.label-green {
-  background-color: #a1d662;
-  color: #4e4e4e;
-}
-
-.label-yellow {
-  background-color: #fffb01;
-  color: #4e4e4e;
-}
-
-.label-orange {
-  background-color: #ffd302;
-  color: #4e4e4e;
-}
-
-.label-red {
-  background-color: #ff2600;
-  color: #fff;
-}
-
-.label-purple {
-  background-color: #8749b8;
-  color: #fff;
-}
-
-.bmi_panel {
-  display: inline-block;
-  min-height: 250px;
-}
-
-.panel-container {
+.patient-container {
   margin-top: 10px;
   display: inline-block;
   width: 100%;
@@ -141,7 +44,7 @@ box-color {
   -moz-box-shadow: 0 -1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
 }
 
-.panel_head {
+.patient-container .header {
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -153,54 +56,57 @@ box-color {
   border-bottom: 2px solid #f4f4f4;
 }
 
-.panel_head .col-md-4 {
+.patient-details-column {
   border-right: 2px solid #f4f4f4;
   padding-top: 15px;
   padding-bottom: 15px;
+  flex:1;
 }
 
-.panel_head .col-md-4 last-child {
+.patient-details-column:last-child {
   border-right: none;
 }
 
-.panel_head label {
+.patient-details-column label {
   font-size: 1.1em;
   color: #7e7e7e;
   font-weight: normal;
-  display: table;
-  margin-bottom: 15px;
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: center;
 }
 
-.panel_head strong {
+.patient-details-column strong {
   font-size: 3em;
   color: #494949;
   letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.panel_head strong sup {
+.patient-details-column strong sup {
   top: -.2em;
   font-style: italic;
 }
 
-.panel_head strong sub {
+.patient-details-column strong sub {
   font-size: 0.4em;
   bottom: 0;
 }
 
-.panel_body {
-  display: table;
-  width: 100%;
+.patient-container .body {
   background: #fff;
   padding: 15px;
 }
 
-.panel_body p {
+.patient-container .body p {
   font-size: 0.9em;
   color: #7e7e7e;
   margin: 0;
 }
 
-.button_block {
+.body > .button_block {
   padding: 5px;
   background: #fff;
   border: 2px solid #ebebeb;
@@ -210,45 +116,11 @@ box-color {
   position: relative;
 }
 
-.button_block .btn-blue {
-  background-color: #55b9d3;
+.body > .button_block button {
   color: #fff;
   font-size: 1em;
   padding: 5px 25px;
   margin-right: 5px;
-}
-
-.button_block .btn-green {
-  background-color: #79be3f;
-  color: #fff;
-  font-size: 1em;
-  padding: 5px 25px;
-  margin-right: 5px;
-}
-
-.button_block .btn-orange {
-  background-color: #ffb030;
-  color: #fff;
-  font-size: 1em;
-  padding: 5px 25px;
-  margin-right: 5px;
-}
-
-.button_block .btn-red {
-  background-color: #f84d56;
-  color: #fff;
-  font-size: 1em;
-  padding: 5px 25px;
-}
-
-.button_block .btn-blue {
-  border-top-left-radius: 15px !important;
-  border-bottom-left-radius: 15px !important;
-}
-
-.button_block .btn-red {
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
 }
 
 .label_block {
@@ -258,13 +130,7 @@ box-color {
   margin: auto;
 }
 
-.label_block .label-text {
-  font-size: 0.8em;
-  color: #acacac;
-  margin-right: 15px;
-}
-
-.label_block .label-blue {
+.label {
   background-color: #55b9d3;
   height: 10px;
   width: 10px;
@@ -273,31 +139,44 @@ box-color {
   display: block;
 }
 
-.label_block .label-green {
+.label_block .label-text {
+  font-size: 0.8em;
+  color: #acacac;
+  margin-right: 15px;
+}
+
+.button_block button.btn-blue,
+.glucose-indicator.blue,
+.label.blue {
+  background-color: #55b9d3;
+}
+
+.button_block button.btn-blue {
+  border-top-left-radius: 15px !important;
+  border-bottom-left-radius: 15px !important;
+}
+
+.button_block button.btn-green,
+.glucose-indicator.green,
+.label.green {
   background-color: #79be3f;
-  height: 10px;
-  width: 10px;
-  border-radius: 10px;
-  margin-right: 5px;
-  display: block;
 }
 
-.label_block .label-orange {
+.button_block button.btn-orange,
+.glucose-indicator.orange,
+.label.orange {
   background-color: #ffb030;
-  height: 10px;
-  width: 10px;
-  border-radius: 10px;
-  margin-right: 5px;
-  display: block;
 }
 
-.label_block .label-red {
+.button_block button.btn-red,
+.glucose-indicator.red,
+.label.red {
   background-color: #f84d56;
-  height: 10px;
-  width: 10px;
-  border-radius: 10px;
-  margin-right: 5px;
-  display: block;
+}
+
+.button_block button.btn-red {
+  border-top-right-radius: 15px !important;
+  border-bottom-right-radius: 15px !important;
 }
 
 .label_block div {
@@ -307,6 +186,42 @@ box-color {
   justify-content: center;
   align-items: center;
   float: left;
+}
+
+app-bmi button {
+  border: 0;
+  outline: none;
+}
+
+app-bmi .indicator-text {
+  background-color: #e6edf3;
+  padding: 5px 7px;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  color: #5b5b5b;
+}
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 tooltip {
@@ -328,4 +243,15 @@ tooltip::after {
   border-color: #494949 transparent;
   display: block;
   width: 0;
+}
+
+app-bmi .glucose-indicator {
+  width: 25px;
+  display: block;
+}
+.flex-group {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: stretch;
+    align-items: stretch;
 }

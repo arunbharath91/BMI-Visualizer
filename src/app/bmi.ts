@@ -6,86 +6,87 @@ class Bmi extends HTMLElement {
   private underweight: HTMLElement;
   private boxcolor: HTMLElement;
   private tooltip: HTMLElement;
-  private template = `<div class="container">
-  <div class="row">
-  <div class="col-md-6">
-  <span class="patient-flex txt-grey shake">
-  <h1>Your BMI Result</h1>
-  <box-color></box-color>
-  <span>${this.getAttribute('value')}</span> <sub>(kg/m<sup>2</sup>)</sub>
-  <h4 class="ml1">| ${this.getAttribute('gender')}</h4>
-  </span>
+  private template = `  <div class="app-container">
 
-  <div class="panel-container">
-  <div class="panel_head">
-  <div class="col-md-4">
-  <label>Weight</label>
-  <strong>191<sub>LBS</sub></strong>
-  </div>
-  <div class="col-md-4">
-  <label>Height</label>
-  <strong>5<sup>'</sup>4<sup>''</sup></strong>
-  </div>
-  <div class="col-md-4">
-  <label>Body Mass Index</label>
-  <strong>32.8</strong>
-  </div>
-  </div>
-  <div class="panel_body">
-  <p>Body Mass Index Scale</p>
+      <div class="patient-result shake">
+        <h1>Your BMI Result</h1>
+        <box-color></box-color>
+        <span>${this.getAttribute('value')}</span>
+        <sub>(kg/m<sup>2</sup>)</sub>
+        <h4>| ${this.getAttribute('gender')}</h4>
+      </div>
 
-  <div class="button_block">
-  <div class="btn-group">
-  <tooltip></tooltip>
-    <button type="button" class="btn btn-blue">< 18.5</button>
-    <button type="button" class="btn btn-green">18.5 - 24.99</button>
-    <button type="button" class="btn btn-orange">25 - 29.99</button>
-    <button type="button" class="btn btn-red">> 30</button>
-  </div>
-  </div>
-  <div class="label_block">
-  <div><span class="label-blue"></span><span class="label-text">UNDERWEIGHT</span></div>
-  <div><span class="label-green"></span><span class="label-text">NORMAL</span></div>
-  <div><span class="label-orange"></span><span class="label-text">OVERWEIGHT</span></div>
-  <div><span class="label-red"></span><span class="label-text">OBESE</span></div>
-  </div>
+      <div class="patient-container">
+        <div class="header">
+          <div class="patient-details-column">
+            <label>Weight</label>
+            <strong>191<sub>LBS</sub></strong>
+          </div>
+          <div class="patient-details-column">
+            <label>Height</label>
+            <strong>5<sup>'</sup>4<sup>''</sup></strong>
+          </div>
+          <div class="patient-details-column">
+            <label>Body Mass Index</label>
+            <strong>32.8</strong>
+          </div>
+        </div>
+        <div class="body">
+          <p>Body Mass Index Scale</p>
 
-  </div>
-  </div>
-  </div>
+          <div class="button_block">
+            <div class="btn-group">
+              <tooltip></tooltip>
+              <button type="button" class="btn-blue">< 18.5</button>
+              <button type="button" class="btn-green">18.5 - 24.99</button>
+              <button type="button" class="btn-orange">25 - 29.99</button>
+              <button type="button" class="btn-red">> 30</button>
+            </div>
+          </div>
+          <div class="label_block">
+            <div>
+              <span class="label blue"></span>
+              <span class="label-text">UNDERWEIGHT</span>
+            </div>
+            <div><span class="label green"></span><span class="label-text">NORMAL</span></div>
+            <div><span class="label orange"></span><span class="label-text">OVERWEIGHT</span></div>
+            <div><span class="label red"></span><span class="label-text">OBESE</span></div>
+          </div>
 
-  <div class="col-lg-3">
-  <div class="patient-flex txt-grey">
-  <h1>Your Result at a glance :</h1></div>
+        </div>
+      </div>
 
-  <a href="#" data-toggle="tooltip" data-placement="left" title="UNDERWEIGHT">
-  <div class="flex-group mb05 mt15">
-  <span class="color-box blue"></span>
-  <span class="panel-block">Your glucose level are two high which indicaters diabetes</span>
-  </div>
-  </a>
-  <a href="#" data-toggle="tooltip" data-placement="left" title="NORMAL">
-  <div class="flex-group mb05">
-  <span class="color-box green"></span>
-  <span class="panel-block">Your glucose level are two high which indicaters diabetes</span>
-  </div>
-  </a>
-  <a href="#" data-toggle="tooltip" data-placement="left" title="OVERWEIGHT">
-  <div class="flex-group mb05">
-  <span class="color-box orange"></span>
-  <span class="panel-block">Your glucose level are two high which indicaters diabetes</span>
-  </div>
-  </a>
-  <a href="#" data-toggle="tooltip" data-placement="left" title="OBESE">
-  <div class="flex-group mb05">
-  <span class="color-box red"></span>
-  <span class="panel-block">Your glucose level are two high which indicaters diabetes</span>
-  </div>
-  </a>
-  </div>
+    <div class="help-view">
+      <div class="patient-result">
+        <h1>Your Result at a glance :</h1>
+      </div>
 
-  </div>
-     </div>`;
+      <a href="#" data-toggle="tooltip" data-placement="left" title="UNDERWEIGHT">
+        <div class="flex-group">
+          <span class="glucose-indicator blue"></span>
+          <span class="indicator-text">Your glucose level are two high which indicaters diabetes</span>
+        </div>
+      </a>
+      <a href="#" data-toggle="tooltip" data-placement="left" title="NORMAL">
+        <div class="flex-group">
+          <span class="glucose-indicator green"></span>
+          <span class="indicator-text">Your glucose level are two high which indicaters diabetes</span>
+        </div>
+      </a>
+      <a href="#" data-toggle="tooltip" data-placement="left" title="OVERWEIGHT">
+        <div class="flex-group">
+          <span class="glucose-indicator orange"></span>
+          <span class="indicator-text">Your glucose level are two high which indicaters diabetes</span>
+        </div>
+      </a>
+      <a href="#" data-toggle="tooltip" data-placement="left" title="OBESE">
+        <div class="flex-group">
+          <span class="glucose-indicator red"></span>
+          <span class="indicator-text">Your glucose level are two high which indicaters diabetes</span>
+        </div>
+      </a>
+    </div>
+`;
   constructor() {
     super();
     this.innerHTML = this.template;

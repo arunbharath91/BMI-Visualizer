@@ -6,8 +6,7 @@ class Bmi extends HTMLElement {
   private underweight: HTMLElement;
   private boxcolor: HTMLElement;
   private tooltip: HTMLElement;
-  private template = `  <div class="app-container">
-
+  private template = `<div class="app-container">
       <div class="patient-result shake">
         <h1>Your BMI Result</h1>
         <box-color></box-color>
@@ -85,8 +84,7 @@ class Bmi extends HTMLElement {
           <span class="indicator-text">Your glucose level are two high which indicaters diabetes</span>
         </div>
       </a>
-    </div>
-`;
+    </div>`;
   constructor() {
     super();
     this.innerHTML = this.template;
@@ -101,11 +99,11 @@ class Bmi extends HTMLElement {
 
   static get observedAttributes() { return ['value', 'gender']; }
 
-  connectedCallback() {
+  protected connectedCallback() {
 
   }
 
-  attributeChangedCallback(name: any, oldValue: any, newValue: any) {
+  protected attributeChangedCallback(name: any, oldValue: any, newValue: any) {
 
     if (oldValue !== newValue && name === 'value') {
       const attrval = Number(this.getAttribute(name));
@@ -133,7 +131,7 @@ class Bmi extends HTMLElement {
 
   }
 
-  animateLeft(leftPos: number) {
+  private animateLeft(leftPos: number) {
     let pos = 0;
     this.tooltip.style.left = '0';
     const frame = () => {

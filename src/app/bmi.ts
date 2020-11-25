@@ -100,7 +100,7 @@ class Bmi extends HTMLElement {
   static get observedAttributes() { return ['value', 'gender']; }
 
   protected connectedCallback() {
-    if (this.getAttribute('shadow') != "false") {
+    if (this.getAttribute('shadow') && this.getAttribute('shadow') != "false") {
       this.attachShadow({ mode: 'open' });
     }
   }

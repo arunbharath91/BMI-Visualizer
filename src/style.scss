@@ -22,10 +22,13 @@ body {
 
 pre {
   display: block;
+  font-size: 87.5%;
   color: #212529;
   background-color: #f7f7f9;
-  padding: 15px;
+  padding: 10px 20px;
+  margin: 15px;
   border-radius: 5px;
+  overflow-y: auto;
 }
 code {
     line-height: 26px;
